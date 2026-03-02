@@ -3,12 +3,35 @@
  */
 package csc_projects;
 
+import java.util.Scanner;
+
 public class Module2 {
     public String getGreeting() {
         return "Hello World!";
     }
 
     public static void main(String[] args) {
-        System.out.println(new Module2().getGreeting());
+        // assign scanner object to be easily used to get user input easily
+        Scanner user_input  = new Scanner(System.in);
+
+        // initaite variables
+        double coupon;
+        double week1, Week2, week3, wweek4;
+        double monthly_total;
+        double weekly_average;
+        double monthly_total_with_coupon;
+        double weekly_average_with_coupon;
+
+
+        // prompt the user to enter discount rate 
+        System.out.println("Please Enter the coupon amount as a decimal (example, .10 for 10%): ");
+        coupon = user_input.nextDouble();
+
+        // check if coupon <= 0 or > 1.0 more than 100%
+        if (coupon <= 0 || coupon > 1.0) {
+            System.out.println("");
+        }
+
     }
 }
+ 
