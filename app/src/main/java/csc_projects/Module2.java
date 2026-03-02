@@ -16,7 +16,7 @@ public class Module2 {
 
         // initaite variables
         double coupon;
-        double week1, Week2, week3, wweek4;
+        double week1, week2, week3, week4;
         double monthly_total;
         double weekly_average;
         double monthly_total_with_coupon;
@@ -24,13 +24,51 @@ public class Module2 {
 
 
         // prompt the user to enter discount rate 
-        System.out.println("Please Enter the coupon amount as a decimal (example, .10 for 10%): ");
+        System.out.print("Please Enter the coupon amount as a decimal (example, .10 for 10%): ");
         coupon = user_input.nextDouble();
 
         // check if coupon <= 0 or > 1.0 more than 100%
         if (coupon <= 0 || coupon > 1.0) {
-            System.out.println("");
+            System.out.println("invalid coupon rate, will use 10% coupon!");
+            coupon = 0.1;
         }
+
+        // prompt the user to enter weekly grocery bill
+        System.out.print(" Please Enter the grocery bill amount for week 1: $");
+        week1 = user_input.nextDouble();
+
+        System.out.print(" Please Enter the grocery bill amount for week 2: $");
+        week2 = user_input.nextDouble();
+
+        System.out.print(" Please Enter the grocery bill amount for week 3: $");
+        week3 = user_input.nextDouble();
+
+        System.out.print(" Please Enter the grocery bill amount for week 4: $");
+        week4 = user_input.nextDouble();
+
+        // calculate monthly total and weeklt average
+        monthly_total = week1 + week2 + week3 + week4;
+        weekly_average = monthly_total / 4;
+
+        // calculate the coupon discount
+        monthly_total_with_coupon = monthly_total  * (1 - coupon);
+        weekly_average_with_coupon  = weekly_average * (1 - coupon);
+
+        // display the results to the user, using %.2f to print 0.00 for dollar amount
+        System.out.println("\n ============= Grocery Bill Summary =============");
+        System.out.println("Coupon rate: " + (int)(coupon * 100) + "%");
+
+        System.out.println("\n Bill Without a coupon");
+        System.out.println("    Monthly Total:    $" + String.format("%.2f", monthly_total));
+        System.out.println("    Weekly Average:   $" + String.format("%.2f", weekly_average));
+
+        System.out.println("\n Bill With a coupon");
+        System.out.println("    Monthly Total:  $" + String.format("%.2f", monthly_total_with_coupon));
+        System.out.println("    Weekly Average: $" + String.format("%.2f", weekly_average_with_coupon));
+        System.out.println("==========================================");
+
+        // close scanner to free up resources
+        user_input.close();
 
     }
 }
