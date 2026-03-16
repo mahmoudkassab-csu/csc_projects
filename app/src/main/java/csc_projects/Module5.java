@@ -34,10 +34,10 @@ public class Module5 {
         
         double temperature_sum = 0;
         double average_temperature;
-        double max_temperature = 0.0;
-        double min_temperature = 0.0;
-        String max_temperature_month = "";
-        String min_temperature_month = "";
+        double max_temperature = temperatures[0]; // initialize max temperature to the first month's temperature
+        double min_temperature = temperatures[0]; // initialize min temperature to the first month's temperature
+        String max_temperature_month = months[0]; // initialize max temperature month to the first month
+        String min_temperature_month = months[0]; // initialize min temperature month to the first month
 
         // introduce the program to the user
         System.out.println("\n============= Welcome to the Average Monthly Temperature Calculator! =============\n");
