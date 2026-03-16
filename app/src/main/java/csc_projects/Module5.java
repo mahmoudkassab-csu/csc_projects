@@ -49,20 +49,66 @@ public class Module5 {
         System.out.println("Type 'exit' to quit the program.\n");
 
         while (true) {
-            System.out.println("Please enter a month name, 'year', or 'exit': ");
+            System.out.print("Please enter a month name, 'year', or 'exit': ");
             String input = user_input.nextLine().trim(); // read next line of input and trim whitespace
 
-            if (input.equalsIgnoreCase("exit")) { // check if user wants to exit
-                System.out.println("Thank you for using the Average Monthly Temperature Calculator. Goodbye!");
-                break;
+            // if (input.equalsIgnoreCase("exit")) { // check if user wants to exit
+            //     System.out.println("Thank you for using the Average Monthly Temperature Calculator. Goodbye!");
+            //     break;
+            // }
+
+            switch (input) {
+                case "exit":  // check if user wants to exit
+                    System.out.println("Thank you for using the Average Monthly Temperature Calculator. Goodbye!");
+                    user_input.close(); // close scanner to free up resources
+                    return; // exit the program
+                case "month": // check if user wants to see monthly temperatures
+                    System.out.print("Please enter a month name (e.g., January): ");
+                    String month_input = user_input.nextLine().trim();
+                    boolean month_found = false;
+                    for (int i = 0; i < months.length; i++) {
+                        if (months[i].equalsIgnoreCase(month_input)) {
+                            System.out.println("The average high temperature for " + months[i] + " is: " + temperatures[i] + "°F");
+                            month_found = true;
+                            break;
+                        }
+                    }
+                    if (!month_found) {
+                        System.out.println("Invalid month name. Please try again.");
+                    }
+                    break;
+                case "year": // check if user wants to see yearly temperatures
+                    System.out.println("Average Monthly High Temperatures for Fort Wayne, Indiana:");
+                    // loop through months, months.length = months array length, which is 12
+                    for (int i = 0; i < months.length; i++) {
+                        System.out.println(months[i] + ": " + temperatures[i] + "°F"); // display each month and its average temperature
+                        temperature_sum += temperatures[i];
+                        if (temperatures[i] > max_temperature) { // loop through temperatures to find max temperature and corresponding month
+                            max_temperature = temperatures[i];
+                            max_temperature_month = months[i];
+                        }
+                        if (temperatures[i] < min_temperature) { // loop through temperatures to find min temperature and corresponding month
+                            min_temperature = temperatures[i];
+                            min_temperature_month = months[i];
+                        }
+                    }
+                    // calculate average temperature
+                    average_temperature = temperature_sum / months.length;
+
+                    System.out.println("\n============= Yearly Temperature Summary =============");
+                    System.out.println("\nYearly Average High Temperature: " + String.format("%.2f", average_temperature) + "°F");
+                    System.out.println("Highest Monthly Average: " + String.format("%.2f", max_temperature) + "°F in " + max_temperature_month);
+                    System.out.println("Lowest Monthly Average: " + String.format("%.2f", min_temperature) + "°F in " + min_temperature_month);
+                    System.out.println("=====================================================");
+                    break;
+                default:
+                    System.out.println("Invalid input. Please enter a valid month name, 'year', or 'exit'.");
+                    break;
             }
 
             // Process the input
+
         }
-
-        // close scanner to free up resources
-        user_input.close();
-
     }
 }
  
