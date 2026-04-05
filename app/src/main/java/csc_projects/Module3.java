@@ -39,8 +39,8 @@ public class Module3 {
 
         // initaite variables
         double coupon;
-        double week1, week2, week3, week4;
-        double monthly_total;
+        // double week1, week2, week3, week4;
+        double monthly_total = 0;
         double weekly_average;
         double monthly_total_with_coupon;
         double weekly_average_with_coupon;
@@ -56,21 +56,28 @@ public class Module3 {
             coupon = 0.1;
         }
 
+        // using while loop to get 4 weeks grocery bills
+        int week = 1;
+        while (week <= 4) {
+            System.out.print(" Please Enter the grocery bill amount for week " + week + ": $");
+            monthly_total += user_input.nextDouble();
+            week++;
+        }
         // prompt the user to enter weekly grocery bill
-        System.out.print(" Please Enter the grocery bill amount for week 1: $");
-        week1 = user_input.nextDouble();
+        // System.out.print(" Please Enter the grocery bill amount for week 1: $");
+        // week1 = user_input.nextDouble();
 
-        System.out.print(" Please Enter the grocery bill amount for week 2: $");
-        week2 = user_input.nextDouble();
+        // System.out.print(" Please Enter the grocery bill amount for week 2: $");
+        // week2 = user_input.nextDouble();
 
-        System.out.print(" Please Enter the grocery bill amount for week 3: $");
-        week3 = user_input.nextDouble();
+        // System.out.print(" Please Enter the grocery bill amount for week 3: $");
+        // week3 = user_input.nextDouble();
 
-        System.out.print(" Please Enter the grocery bill amount for week 4: $");
-        week4 = user_input.nextDouble();
+        // System.out.print(" Please Enter the grocery bill amount for week 4: $");
+        // week4 = user_input.nextDouble();
 
-        // calculate monthly total and weeklt average
-        monthly_total = week1 + week2 + week3 + week4;
+        // // calculate monthly total and weeklt average
+        // monthly_total = week1 + week2 + week3 + week4;
         weekly_average = monthly_total / 4;
 
         // calculate the coupon discount
