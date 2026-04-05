@@ -6,11 +6,13 @@
 -------------------------------------------
  Pseudocode: 
     1. Start the program
-    2. Declare and initialize variables for months, temperatures, temperature_sum, average_temperature, max_temperature, min_temperature, max_temperature_month, and min_temperature_month
+    2. Declare and initialize variables for months, temperatures, temperature_sum, average_temperature, max_temperature, min_temperature, 
+        max_temperature_month, and min_temperature_month
     3. Introduce the program to the user and explain what it does
     4. prompt the user to enter a month name, 'year', or 'exit'
         a. if user enters 'exit', display a goodbye message and end the program
-        b. if user enters 'year', display the average high temperature for each month, calculate and display the yearly average, maximum, and minimum temperatures with corresponding months
+        b. if user enters 'year', display the average high temperature for each month, calculate and display the yearly average, maximum, 
+            and minimum temperatures with corresponding months
         c. if user enters a month name, display the average high temperature for that month
         d. if user enters an empty input, prompt the user to enter a valid month name, 'year', or 'exit'
         e. if user enters an invalid month name, prompt the user to enter a valid month name, 'year', or 'exit'
@@ -18,7 +20,9 @@
     6. End the program
 -------------------------------------------
  Program Inputs: month name, 'year', or 'exit'
- Program Outputs: average high temperature for a specific month, average high temperatures for all months, yearly average high temperature, maximum monthly average high temperature with corresponding month, minimum monthly average high temperature with corresponding month, and goodbye message when exiting the program
+ Program Outputs: average high temperature for a specific month, average high temperatures for all months, yearly average high temperature, 
+    maximum monthly average high temperature with corresponding month, minimum monthly average high temperature with corresponding month, 
+    and goodbye message when exiting the program
 -------------------------------------------
  */
 package csc_projects;
